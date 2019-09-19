@@ -1,0 +1,45 @@
+<div class="breadcrumb">
+  <ul class="breadcrumb__list" #listItems (mouseleave)="onListMouseLeave($event)" (mousemove)="onListMouseMove($event)">
+    <span class="breadcrumb__overlay" #overlay></span>
+    <li class="breadcrumb__item active" (mouseleave)="onItemMouseLeave($event)">
+      <a routerLink="/dashboard" class="breadcrumb__link breadcrumb__link-1">
+        <svg class="breadcrumb__icon">
+          <use xlink:href="/assets/icons/symbol-defs.svg#icon-stats-dots"></use>
+        </svg>
+        <span class="breadcrumb__text">Dashboard</span>
+      </a>
+    </li>
+    <li class="breadcrumb__item" (mouseleave)="onItemMouseLeave($event)">
+      <a routerLink="/dashboard" class="breadcrumb__link breadcrumb__link-2">
+        <svg class="breadcrumb__icon">
+          <use xlink:href="/assets/icons/symbol-defs.svg#icon-folder-open"></use>
+        </svg>
+        <span class="breadcrumb__text">Posts</span>
+      </a>
+    </li>
+    <li class="breadcrumb__item" (mouseleave)="onItemMouseLeave($event)">
+      <a routerLink="/dashboard" class="breadcrumb__link breadcrumb__link-3">
+        <svg class="breadcrumb__icon">
+          <use xlink:href="/assets/icons/symbol-defs.svg#icon-user1"></use>
+        </svg>
+        <span class="breadcrumb__text">Users</span>
+      </a>
+    </li>
+    <li class="breadcrumb__item" (mouseleave)="onItemMouseLeave($event)">
+      <a routerLink="/dashboard" class="breadcrumb__link breadcrumb__link-4">
+        <svg class="breadcrumb__icon">
+          <use xlink:href="/assets/icons/symbol-defs.svg#icon-price-tags"></use>
+        </svg>
+        <span class="breadcrumb__text">Categories</span>
+      </a>
+    </li>
+    <li class="breadcrumb__item" (mouseleave)="onItemMouseLeave($event)">
+      <a routerLink="/dashboard" class="breadcrumb__link breadcrumb__link-5">
+        <svg class="breadcrumb__icon">
+          <use xlink:href="/assets/icons/symbol-defs.svg#icon-cogs"></use>
+        </svg>
+        <span class="breadcrumb__text">Settings</span>
+      </a>
+    </li>
+  </ul>
+</div>

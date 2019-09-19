@@ -1,0 +1,40 @@
+<div class="navbar">
+  <div class="navbar__brand">
+    <a routerLink="/" class="navbar__logo"><img alt="LOGO" class="navbar__logo-image"
+        src="/assets/images/logo.png" /></a>
+  </div>
+  <ul class="navbar__meta">
+    <div class="navbar__notifications">
+      <svg class="navbar__icon navbar__icon-notifications">
+        <use xlink:href="/assets/icons/symbol-defs.svg#icon-bell">
+        </use>
+      </svg>
+      <span class="navbar__notifications-count">{{notificationsCount}}</span>
+    </div>
+    <div class="navbar__user">
+      <div class="navbar__avatar">
+        <svg class="navbar__icon navbar__icon-user">
+          <use xlink:href="/assets/icons/symbol-defs.svg#icon-chevron-thin-down">
+          </use>
+        </svg>
+        <img
+          src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
+          alt="USER" class="navbar__avatar-image">
+        <span class="navbar__user-name">Jane Doe</span>
+      </div>
+      <div class="navbar__user-dropdown">
+        <a routerLink="/profile" class="navbar__user-dropdown-item"><svg class="navbar__user-dropdown-icon">
+            <use xlink:href="/assets/icons/symbol-defs.svg#icon-user1"></use>
+          </svg>Profile</a>
+        <a href="/settings" class="navbar__user-dropdown-item"><svg class="navbar__user-dropdown-icon">
+            <use xlink:href="/assets/icons/symbol-defs.svg#icon-cogs"></use>
+          </svg>Settings</a>
+        <a href="" class="navbar__user-dropdown-item" (click)="onLogoutClick($event)"><svg
+            class="navbar__user-dropdown-icon">
+            <use xlink:href="/assets/icons/symbol-defs.svg#icon-enter"></use>
+          </svg>Logout</a>
+      </div>
+    </div>
+  </ul>
+</div>
+<app-breadcrumb></app-breadcrumb>
