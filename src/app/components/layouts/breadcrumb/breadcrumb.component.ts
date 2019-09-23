@@ -1,4 +1,11 @@
-import { Component, ViewChild, ElementRef, AfterViewInit } from "@angular/core";
+import {
+  Component,
+  ViewChild,
+  ElementRef,
+  AfterViewInit,
+  ChangeDetectorRef
+} from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-breadcrumb",
@@ -7,6 +14,8 @@ import { Component, ViewChild, ElementRef, AfterViewInit } from "@angular/core";
 export class BreadcrumbComponent implements AfterViewInit {
   @ViewChild("listItems") listItems: ElementRef;
   @ViewChild("overlay") overlay: ElementRef;
+  checked: boolean = false;
+  constructor(private cdRef: ChangeDetectorRef, private router: Router) {}
   items: ElementRef[];
 
   ngAfterViewInit() {
@@ -18,12 +27,24 @@ export class BreadcrumbComponent implements AfterViewInit {
         this.overlay.nativeElement.style.left = item.offsetLeft + "px";
       }
     });
+    setTimeout(() => {
+      if (!this.checked) {
+        this.ngAfterViewInit();
+        this.checked = true;
+      }
+    }, 100);
+  }
+
+  onNavigateClick(route: string) {
+    this.router.navigate([`${route}`]);
   }
 
   onListMouseMove(e) {
-    if (e.target.classList.contains("breadcrumb__link")) {
-      this.overlay.nativeElement.style.width = e.target.clientWidth + "px";
-      this.overlay.nativeElement.style.left = e.target.offsetLeft + "px";
+    if (e.target.classList.contains("breadcrumb__overlay-fade")) {
+      this.overlay.nativeElement.style.width =
+        e.target.nextElementSibling.clientWidth + "px";
+      this.overlay.nativeElement.style.left =
+        e.target.offsetParent.offsetLeft + "px";
       this.items.forEach((item: any) => {
         item.style.color = "var(--color-grey-dark-2)";
         e.target.parentElement.style.color = "var(--color-white)";
@@ -37,12 +58,13 @@ export class BreadcrumbComponent implements AfterViewInit {
         item.style.color = "var(--color-white)";
         this.overlay.nativeElement.style.width = item.clientWidth + "px";
         this.overlay.nativeElement.style.left = item.offsetLeft + "px";
+      } else {
+        item.style.color = "var(--color-grey-dark-2)";
       }
     });
   }
 
   onItemMouseLeave(e) {
-    // console.log("RUN");
-    // e.target.style.color = "var(--color-grey-dark-2)";
+    e.target.style.color = "var(--color-grey-dark-2)";
   }
 }

@@ -1,40 +1,98 @@
 <div class="breadcrumb">
-  <ul class="breadcrumb__list" #listItems (mouseleave)="onListMouseLeave($event)" (mousemove)="onListMouseMove($event)">
+  <ul
+    class="breadcrumb__list"
+    #listItems
+    (mouseleave)="onListMouseLeave($event)"
+    (mousemove)="onListMouseMove($event)"
+  >
     <span class="breadcrumb__overlay" #overlay></span>
-    <li class="breadcrumb__item active" (mouseleave)="onItemMouseLeave($event)">
-      <a routerLink="/dashboard" class="breadcrumb__link breadcrumb__link-1">
+    <li
+      class="breadcrumb__item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <span
+        class="breadcrumb__overlay-fade"
+        (click)="onNavigateClick('/admin')"
+        (mouseleave)="onItemMouseLeave($event)"
+      ></span>
+      <a routerLink="/admin" class="breadcrumb__link breadcrumb__link-1">
         <svg class="breadcrumb__icon">
           <use xlink:href="/assets/icons/symbol-defs.svg#icon-stats-dots"></use>
         </svg>
         <span class="breadcrumb__text">Dashboard</span>
       </a>
     </li>
-    <li class="breadcrumb__item" (mouseleave)="onItemMouseLeave($event)">
-      <a routerLink="/dashboard" class="breadcrumb__link breadcrumb__link-2">
+    <li
+      class="breadcrumb__item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <span
+        class="breadcrumb__overlay-fade"
+        (click)="onNavigateClick('/admin/posts')"
+        (mouseleave)="onItemMouseLeave($event)"
+      ></span>
+      <a routerLink="/admin/posts" class="breadcrumb__link breadcrumb__link-2">
         <svg class="breadcrumb__icon">
-          <use xlink:href="/assets/icons/symbol-defs.svg#icon-folder-open"></use>
+          <use
+            xlink:href="/assets/icons/symbol-defs.svg#icon-folder-open"
+          ></use>
         </svg>
         <span class="breadcrumb__text">Posts</span>
       </a>
     </li>
-    <li class="breadcrumb__item" (mouseleave)="onItemMouseLeave($event)">
-      <a routerLink="/dashboard" class="breadcrumb__link breadcrumb__link-3">
+    <li
+      class="breadcrumb__item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <span
+        class="breadcrumb__overlay-fade"
+        (click)="onNavigateClick('/admin/users')"
+        (mouseleave)="onItemMouseLeave($event)"
+      ></span>
+      <a routerLink="/admin/users" class="breadcrumb__link breadcrumb__link-3">
         <svg class="breadcrumb__icon">
           <use xlink:href="/assets/icons/symbol-defs.svg#icon-user1"></use>
         </svg>
         <span class="breadcrumb__text">Users</span>
       </a>
     </li>
-    <li class="breadcrumb__item" (mouseleave)="onItemMouseLeave($event)">
-      <a routerLink="/dashboard" class="breadcrumb__link breadcrumb__link-4">
+    <li
+      class="breadcrumb__item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <span
+        class="breadcrumb__overlay-fade"
+        (click)="onNavigateClick('/admin/categories')"
+        (mouseleave)="onItemMouseLeave($event)"
+      ></span>
+      <a
+        routerLink="/admin/categories"
+        class="breadcrumb__link breadcrumb__link-4"
+      >
         <svg class="breadcrumb__icon">
           <use xlink:href="/assets/icons/symbol-defs.svg#icon-price-tags"></use>
         </svg>
         <span class="breadcrumb__text">Categories</span>
       </a>
     </li>
-    <li class="breadcrumb__item" (mouseleave)="onItemMouseLeave($event)">
-      <a routerLink="/dashboard" class="breadcrumb__link breadcrumb__link-5">
+    <li
+      class="breadcrumb__item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <span
+        class="breadcrumb__overlay-fade"
+        (click)="onNavigateClick('/admin/settings')"
+        (mouseleave)="onItemMouseLeave($event)"
+      ></span>
+      <a
+        routerLink="/admin/settings"
+        class="breadcrumb__link breadcrumb__link-5"
+      >
         <svg class="breadcrumb__icon">
           <use xlink:href="/assets/icons/symbol-defs.svg#icon-cogs"></use>
         </svg>

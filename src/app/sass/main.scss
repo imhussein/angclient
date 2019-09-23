@@ -10,9 +10,10 @@
 
 // Layouts
 @import "./layouts/navbar";
+@import "./layouts/_grid";
 
 // Components
 @import "./components/buttons";
 @import "./components/cards";
 @import "./components/forms";
-@import "./components/breadcrumb.scss";
+@import "./components/breadcrumb";
