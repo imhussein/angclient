@@ -1,1 +1,21 @@
-LOGIN
+<div class="card">
+  <div class="card__auth">
+    <div class="card__auth-content">
+      <h2 class="card__auth-header">Login</h2>
+      <div class="card__auth-body">
+        <form [formGroup]="loginForm">
+          <div class="form__group">
+            <input type="email" class="form__control" formControlName="email" id="email" name="email"
+              placeholder="e.g joan@gmail.com">
+            <label class="form__label" for="email">Email</label>
+          </div>
+          <div class="form__group">
+            <input type="password" class="form__control" formControlName="password" id="password" name="password"
+              placeholder="Password">
+            <label for="password" class="form__label">Password</label>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+.form {
+  &__group {
+    &:not(:last-of-type) {
+      margin-bottom: 2.7rem;
+    }
+  }
+
+  &__control {
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: var(--color-black);
+    display: block;
+    width: 100%;
+    outline: none;
+    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.02);
+    border: none;
+    border-bottom: 2px solid var(--color-grey-light-2);
+    padding: 1.8rem 1.5rem;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+
+    &::-webkit-input-placeholder {
+      color: var(--color-grey-light-2)
+    }
+
+    &:focus {
+      box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.04);
+      border-bottom: 2px solid var(--color-primary);
+    }
+  }
+
+  &__label {
+    font-size: 1.4rem;
+    transform: translateY(8px);
+    opacity: 1;
+    display: block;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  &__control:placeholder-shown+&__label {
+    transform: translateY(-8px);
+    opacity: 0;
+  }
+}
